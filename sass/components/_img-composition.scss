@@ -1,0 +1,53 @@
+.img-composition {
+  position: relative;
+  &__photo {
+    width: 70%;
+    position: absolute;
+    box-shadow: -1rem 1rem 2rem rgba(0, 0, 0, 0.2);
+    transition: all 0.2s;
+    @include respond(tab-port) {
+      width: 30%;
+      position: relative;
+    }
+
+    &--1 {
+      top: -2rem;
+      left: 0;
+      @include respond(tab-port) {
+        top: 0;
+        left: 1rem;
+        transform: scale(1.2);
+      }
+    }
+
+    &--2 {
+      top: 4rem;
+      left: 20%;
+      @include respond(tab-port) {
+        top: 1.5rem;
+        left: 2rem;
+        transform: scale(1.2);
+      }
+    }
+
+    &--3 {
+      top: 10rem;
+      left: 40%;
+      @include respond(tab-port) {
+        top: 3rem;
+        left: 3rem;
+        transform: scale(1.2);
+      }
+    }
+
+    &:hover {
+      outline: 1.5rem solid $color-primary-red;
+      outline-offset: 2rem;
+      z-index: 2;
+    }
+  }
+
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95);
+  }
+}

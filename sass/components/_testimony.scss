@@ -1,0 +1,53 @@
+.testimony {
+  background-color: rgba($color-white, 0.8);
+  padding: 6rem;
+  padding-left: 7rem;
+  width: 60%;
+  border-radius: $border-radius-default;
+  margin: 0 auto;
+  font-size: $font-size-default;
+  transform: skewX(15deg);
+  @include respond(tab-port) {
+    width: 80%;
+  }
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    -webkit-shape-outside: circle(50%);
+    shape-outside: circle(50%);
+    position: relative;
+    transform: translateX(-3rem) skewX(-15deg);
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(3rem);
+    text-align: center;
+    color: $color-white;
+    opacity: 0;
+    cursor: default;
+    transition: all 0.5s ease;
+  }
+
+  &__text {
+    transform: skewX(-15deg);
+  }
+
+  &:hover &__name {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+  }
+
+  &:hover &__image {
+    filter: blur(3px) brightness(0.5);
+  }
+}

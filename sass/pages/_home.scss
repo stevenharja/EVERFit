@@ -1,0 +1,81 @@
+.section-summary {
+  background-color: $color-grey-light;
+  padding: 25rem 20rem;
+  margin-top: -25vh;
+  display: flex;
+  flex-direction: column;
+  font-size: $font-size-default;
+  @include respond(tab-land) {
+    padding: 25rem 10rem;
+  }
+  @include respond(phone) {
+    padding: 25rem 5rem;
+  }
+
+  &__content {
+    display: flex;
+    @include respond(tab-port) {
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__text {
+    flex: 0 0 50%;
+    margin-right: 5rem;
+    @include respond(tab-port) {
+      margin-right: 0;
+      flex: 1;
+      margin-bottom: 5rem;
+    }
+  }
+
+  &__images {
+    flex: 1;
+    position: relative;
+  }
+}
+
+.section-testimony {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-red, 0.8),
+      rgba($color-primary-blue, 0.8)
+    ),
+    url("../img/background-img-1.jpg");
+  background-size: cover;
+  padding: 18rem 0 15rem 0;
+  margin-top: -15rem;
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+  display: flex;
+  flex-direction: column;
+  & > * {
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    & > *:not(:last-child) {
+      margin-bottom: 10rem;
+    }
+  }
+}
+
+.section-offers {
+  background-color: $color-grey-light;
+  padding: 25rem 15rem;
+  &__content {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__content > * {
+    flex: 0 0 30%;
+  }
+}

@@ -1,0 +1,139 @@
+.program-lite-full-list {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media only screen and (max-width: $bp-smallest) {
+    justify-content: space-around;
+  }
+}
+
+.program-lite-full-list > * {
+  flex: 0 0 20%;
+  @media only screen and (max-width: $bp-large) {
+    flex: 0 0 25%;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    flex: 0 0 33%;
+    margin-bottom: 1.5rem;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    flex: 0 0 45%;
+  }
+}
+
+.program-lite-list {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media only screen and (max-width: $bp-smallest) {
+    justify-content: space-around;
+  }
+}
+
+.program-lite-list > * {
+  flex: 0 0 25%;
+
+  @media only screen and (max-width: $bp-large) {
+    flex: 0 0 33%;
+    margin-bottom: 1.5rem;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    flex: 0 0 50%;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    flex: 0 0 45%;
+  }
+}
+
+.program-lite {
+  &__container {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  font-weight: 700;
+  cursor: pointer;
+  width: 25rem;
+
+  @media only screen and (max-width: $bp-smallest) {
+    width: 100%;
+  }
+
+  transition: all 0.3s;
+  &__image-box {
+    transition: inherit;
+  }
+
+  &:hover &__image-box {
+    filter: brightness(0.7);
+  }
+  &__image {
+    width: 100%;
+    border-radius: var(--border-radius-small);
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &__content > * {
+    padding: 0.3rem;
+  }
+  &__title {
+    font-size: var(--font-size-default);
+    color: var(--color-black);
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 3rem;
+    }
+  }
+  &__creator {
+    font-size: 1.2rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 2rem;
+    }
+  }
+  &__ratings {
+    display: flex;
+    align-items: center;
+  }
+  &__star-number {
+    color: var(--color-primary-red);
+    margin-right: 1rem;
+  }
+  &__icon-star {
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: var(--color-gold);
+  }
+
+  &__tags {
+    display: flex;
+  }
+
+  &__tag-item {
+    border: var(--border-grey);
+    padding: 0.25rem;
+    border-radius: var(--border-radius-large);
+    transition: all 0.2s;
+    &:hover {
+      background-color: var(--color-primary-red);
+      color: var(--color-grey-light-2);
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 1.5rem;
+    }
+  }
+}

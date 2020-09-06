@@ -1,0 +1,127 @@
+.footer {
+  padding: 10rem 0;
+  background-color: $color-black-2;
+  font-size: $font-size-default;
+  color: $color-grey-light;
+  display: flex;
+  flex-direction: column;
+
+  @include respond(tab-port) {
+    padding: 6rem 0;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  &__social-media-box {
+    display: flex;
+    flex-direction: column;
+    margin-right: 3rem;
+    @include respond(tab-land) {
+      margin-right: 0;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__copyright-box {
+    flex: 0 0 40%;
+    @include respond(tab-land) {
+      flex: 0 0 80%;
+    }
+  }
+
+  &__logo-container {
+    text-align: center;
+    margin-bottom: 8rem;
+    @include respond(tab-land) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__logo {
+    width: 7rem;
+    height: auto;
+  }
+
+  &__social-media {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    @include respond(tab-port) {
+      text-align: center;
+    }
+  }
+
+  &__social-text {
+    font-weight: 400;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 1rem;
+  }
+
+  &__social-icon {
+    font-size: 2.5rem;
+    color: $color-grey-light;
+    text-decoration: none;
+    transition: all 0.2s;
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+    &:hover {
+      color: $color-primary-red;
+    }
+  }
+
+  &__navigation {
+    border-top: 1px solid $color-grey-dark;
+    display: inline-block;
+    padding-top: 1.5rem;
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      transition: all 0.2s;
+      padding: 0.5rem;
+      text-decoration: none;
+      display: inline-block;
+      color: inherit;
+      text-transform: uppercase;
+    }
+
+    &:hover,
+    &:active {
+      box-shadow: 0 0.3rem 1rem rgba($color-black, 0.5);
+      background-color: $color-grey-light;
+      color: $color-primary-red;
+      transform: scale(1.2);
+    }
+  }
+
+  &__copyright {
+    border-top: 1px solid $color-grey-dark;
+    padding: 0.5rem;
+    margin-top: 5rem;
+    padding-top: 1.5rem;
+    @include respond(tab-port) {
+      margin-top: 0;
+      text-align: center;
+    }
+  }
+}

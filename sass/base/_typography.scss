@@ -1,0 +1,87 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: $color-grey-dark;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+
+  backface-visibility: hidden;
+  margin-bottom: 4rem;
+
+  &--main {
+    display: block;
+    font-size: $font-size-large;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    animation: moveFromTop 1s ease-out;
+    margin-bottom: 2rem;
+  }
+
+  &--sub {
+    display: block;
+    font-size: $font-size-medium;
+    font-weight: 400;
+    letter-spacing: 1.2rem;
+    animation: moveFromTop 1s ease-out 1s;
+    animation-fill-mode: backwards;
+  }
+}
+
+.heading-secondary {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3rem;
+  transition: all 0.2s;
+
+  &--gradient {
+    color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(
+      to bottom right,
+      $color-primary-red,
+      $color-primary-blue
+    );
+  }
+
+  &--white {
+    color: $color-white;
+  }
+}
+
+//Program Page Heading
+.heading-secondary-sub {
+  font-weight: 300;
+  font-size: 3rem;
+  letter-spacing: -1px;
+
+  &--gradient {
+    color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(
+      to bottom right,
+      $color-primary-red,
+      $color-primary-blue
+    );
+  }
+
+  &--white {
+    color: var(--color-white);
+  }
+}
+
+.heading-tertiary {
+  color: $color-grey-dark;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: $font-size-default;
+}
+
+.paragraph {
+  font-size: inherit;
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}

@@ -1,0 +1,35 @@
+.section-title {
+  margin: 5rem;
+}
+
+.section-recommended {
+  margin: 3rem 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-featured {
+  padding: 6rem 5rem;
+  background-image: linear-gradient(
+    to left top,
+    var(--color-primary-blue),
+    var(--color-primary-red)
+  );
+  margin: 5rem 0;
+  transform: skewY(-3deg);
+
+  & > * {
+    transform: skewY(3deg);
+  }
+}
+
+.section-all-programs {
+  margin: 3rem 5rem;
+  &__content {
+    display: flex;
+    @media only screen and (max-width: $bp-smallest) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

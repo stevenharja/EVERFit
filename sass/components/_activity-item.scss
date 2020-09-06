@@ -1,0 +1,54 @@
+.activity-item {
+  border: 3px solid var(--color-primary-red);
+  border-radius: 3px;
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-primary-red) 0%,
+    var(--color-primary-red) 50%,
+    var(--color-black) 50%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-grey-light);
+  padding: 1rem 2rem;
+  position: relative;
+
+  &--active::after {
+    content: "";
+    position: absolute;
+    outline: 3px solid var(--color-primary-red);
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    z-index: 2;
+    animation: growOut 1s infinite;
+  }
+
+  &--active &__title {
+    font-weight: 700;
+  }
+
+  &--active &__timer {
+    animation: pulsate 1s infinite;
+  }
+
+  & > * {
+    margin-bottom: 1rem;
+  }
+  &__title {
+  }
+
+  &__img-box {
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__timer {
+  }
+}

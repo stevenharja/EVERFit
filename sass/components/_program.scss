@@ -1,0 +1,116 @@
+.program {
+  &__container {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  display: flex;
+  padding: 3rem;
+  border: var(--border-grey);
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-white);
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 700;
+
+  transition: all 0.3s;
+
+  @media only screen and (max-width: $bp-smallest) {
+    flex-direction: column;
+  }
+  &__image-box {
+    flex: 0 0 40%;
+    transition: inherit;
+    margin-right: 3rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+      margin-right: 0;
+      flex: 0 0 100%;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &:hover &__image-box {
+    filter: brightness(0.7);
+  }
+
+  &__image {
+    border-radius: var(--border-radius-small);
+    max-width: 50rem;
+    width: 100%;
+    @media only screen and (max-width: $bp-smallest) {
+      max-width: none;
+    }
+  }
+
+  &__content {
+    margin-right: auto;
+    align-self: flex-start;
+    @media only screen and (max-width: $bp-smallest) {
+      flex: 1;
+    }
+  }
+
+  &__content > * {
+    &:not(:last-child) {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    color: var(--color-primary-red); //Change to gradient
+  }
+
+  &__creator {
+    font-size: 1.5rem;
+  }
+
+  &__lecture-count {
+  }
+
+  &__description {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  &__ratings {
+    display: flex;
+    align-items: center;
+  }
+
+  &__star-number {
+    color: var(--color-primary-red);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  &__stars {
+    margin-right: 1rem;
+  }
+
+  &__icon-star {
+    height: 2rem;
+    width: 2rem;
+    fill: var(--color-gold);
+  }
+
+  &__ratings-number {
+    color: var(--color-primary-red);
+    font-size: 1.25rem;
+  }
+
+  &__tags {
+    display: inline-block;
+  }
+
+  &__tag-item {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-brown);
+    padding: 0.5rem;
+    border-radius: var(--border-radius-small);
+    background-color: var(--color-gold-2);
+  }
+}
