@@ -8,7 +8,16 @@
   font-size: $font-size-default;
   transform: skewX(15deg);
   @include respond(tab-port) {
-    width: 80%;
+    width: 90%;
+    text-align: center;
+  }
+
+  @include respond(phone) {
+    display: grid;
+    transform: skewX(0);
+    padding: 5rem;
+    justify-items: center;
+    row-gap: 2rem;
   }
   &__shape {
     width: 15rem;
@@ -20,6 +29,11 @@
     shape-outside: circle(50%);
     position: relative;
     transform: translateX(-3rem) skewX(-15deg);
+    @include respond(phone) {
+      transform: skewX(0);
+      width: 20rem;
+      height: 20rem;
+    }
   }
 
   &__image {
@@ -35,11 +49,17 @@
     color: $color-white;
     opacity: 0;
     cursor: default;
+    @include respond(phone) {
+      font-size: 2rem;
+    }
     transition: all 0.5s ease;
   }
 
   &__text {
     transform: skewX(-15deg);
+    @include respond(phone) {
+      transform: skewX(0);
+    }
   }
 
   &:hover &__name {

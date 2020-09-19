@@ -1,20 +1,32 @@
 .program-part {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  row-gap: 3rem;
+  justify-items: center;
   font-size: 2rem;
   cursor: default;
+  padding: 3rem 5rem;
 
   &--active &__title::before {
     visibility: visible;
     animation: underlineText 2s infinite;
   }
+
+  &--bg-gradient {
+    background-image: linear-gradient(
+      to right,
+      $color-primary-red,
+      $color-primary-blue
+    );
+  }
+
+  &--bg-gradient &__title {
+    color: $color-white;
+  }
+
   &__title {
     font-size: 3.5rem;
     text-transform: uppercase;
     color: var(--color-primary-red);
-    margin-bottom: 1.5rem;
     position: relative;
 
     &::before {
@@ -31,35 +43,35 @@
 
   &__activity-list {
     list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    row-gap: 3rem;
+    column-gap: 3rem;
+    @include respond(tab-port) {
+      grid-template-columns: 1fr 1fr;
+    }
 
-    & > * {
-      margin: 1rem;
-      flex: 0 0 25%;
-
-      @media only screen and (max-width: $bp-smallest) {
-        flex: 100%;
-      }
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+      row-gap: 5rem;
     }
   }
 
   &__repeat {
     color: var(--color-grey-light);
     background-color: var(--color-black);
+    font-size: 2rem;
     border-radius: 3px;
-    padding: 1rem 2rem;
-
-    margin-bottom: 2rem;
+    padding: 2rem 4rem;
   }
 
   &__start-red {
     color: var(--color-grey-light);
     text-transform: uppercase;
-    padding: 1rem 2rem;
+    font-size: 2rem;
     border-radius: 100px;
+    padding: 2rem 4rem;
     background-image: linear-gradient(
       to right bottom,
       var(--color-primary-red) 40%,

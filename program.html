@@ -30,6 +30,18 @@
           </svg>
         </button>
       </form>
+
+      <input
+        type="checkbox"
+        class="header-alt__checkbox"
+        id="header-alt__menu"
+      />
+      <label for="header-alt__menu" class="header-alt__menu-label">
+        <!-- <span class="header-alt__menu-logo"></span> -->
+        <svg class="header-alt__menu-logo">
+          <use xlink:href="img/sprite.svg#icon-menu"></use>
+        </svg>
+      </label>
       <nav class="header-alt__nav">
         <div class="header-alt__nav-item">
           <a href="#" class="header-alt__nav-link">Home</a>
@@ -40,7 +52,7 @@
         <div class="header-alt__nav-item">
           <a href="#" class="header-alt__nav-link">Account</a>
         </div>
-        <div class="header-alt__nav-item">
+        <div class="header-alt__nav-item header-alt__nav-item--priority">
           <figure class="header-alt__nav-user">
             <img
               src="img/profile-img.jpg"
@@ -94,21 +106,19 @@
             </div>
           </div>
           <div class="program-introduction__video-container">
-            <div class="program-introduction__video">
-              <video
-                class="program-introduction__video-content"
-                controls
-                autoplay
-                muted
-                loop
-              >
-                <source
-                  src="video/program-introduction-video-1.mp4"
-                  type="video/mp4"
-                />
-                Your browser is not supported.
-              </video>
-            </div>
+            <video
+              class="program-introduction__video-content"
+              controls
+              autoplay
+              muted
+              loop
+            >
+              <source
+                src="video/program-introduction-video-1.mp4"
+                type="video/mp4"
+              />
+              Your browser is not supported.
+            </video>
           </div>
         </div>
       </section>
@@ -176,6 +186,69 @@
           <div class="program-part__repeat">Repeat 5 Times</div>
           <div class="program-part__start-red">Start Day 1</div>
         </div>
+
+        <div class="program-part program-part--bg-gradient">
+          <div class="program-part__title">Day 2: Light Cardio</div>
+          <ul class="program-part__activity-list">
+            <li class="activity-item">
+              <div class="activity-item__img-box">
+                <img
+                  src="img/program-4.jpg"
+                  alt="Exercise 1"
+                  class="activity-item__img"
+                />
+              </div>
+              <div class="activity-item__title">Jumping Jacks</div>
+              <div class="activity-item__timer">60 Seconds</div>
+            </li>
+            <li class="activity-item">
+              <div class="activity-item__img-box">
+                <img
+                  src="img/program-5.jpg"
+                  alt="Exercise 2"
+                  class="activity-item__img"
+                />
+              </div>
+              <div class="activity-item__title">Bunny Hops</div>
+              <div class="activity-item__timer">60 Seconds</div>
+            </li>
+            <li class="activity-item">
+              <div class="activity-item__img-box">
+                <img
+                  src="img/program-6.jpg"
+                  alt="Exercise 3"
+                  class="activity-item__img"
+                />
+              </div>
+              <div class="activity-item__title">Lunges</div>
+              <div class="activity-item__timer">60 Seconds</div>
+            </li>
+            <li class="activity-item">
+              <div class="activity-item__img-box">
+                <img
+                  src="img/program-1.jpg"
+                  alt="Exercise 4"
+                  class="activity-item__img"
+                />
+              </div>
+              <div class="activity-item__title">Squats</div>
+              <div class="activity-item__timer">45 Seconds</div>
+            </li>
+            <li class="activity-item">
+              <div class="activity-item__img-box">
+                <img
+                  src="img/program-2.jpg"
+                  alt="Exercise 5"
+                  class="activity-item__img"
+                />
+              </div>
+              <div class="activity-item__title">High Knee Taps</div>
+              <div class="activity-item__timer">60 Seconds</div>
+            </li>
+          </ul>
+          <div class="program-part__repeat">Repeat 7 Times</div>
+          <div class="program-part__start-red">Start Day 2</div>
+        </div>
       </section>
     </main>
 
@@ -216,4 +289,5 @@
       </p>
     </footer>
   </body>
+  <script src="js/main.js"></script>
 </html>

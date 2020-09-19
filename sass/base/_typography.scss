@@ -57,6 +57,10 @@ body {
   font-size: 3rem;
   letter-spacing: -1px;
 
+  @include respond(phone) {
+    font-size: 2rem;
+  }
+
   &--gradient {
     color: transparent;
     -webkit-background-clip: text;

@@ -11,3 +11,13 @@
 .u-margin-bottom-large {
   margin-bottom: 6rem !important;
 }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + * {
+  padding-top: 7.5rem;
+}

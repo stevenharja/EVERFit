@@ -1,61 +1,37 @@
 .program {
-  &__container {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-  }
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  column-gap: 3rem;
+  row-gap: 3rem;
   padding: 3rem;
+  text-decoration: none;
+  color: inherit;
   border: var(--border-grey);
   border-radius: var(--border-radius-small);
   background-color: var(--color-white);
-  justify-content: space-between;
-  align-items: center;
   cursor: pointer;
   font-weight: 700;
 
-  transition: all 0.3s;
-
-  @media only screen and (max-width: $bp-smallest) {
-    flex-direction: column;
-  }
-  &__image-box {
-    flex: 0 0 40%;
-    transition: inherit;
-    margin-right: 3rem;
-
-    @media only screen and (max-width: $bp-smallest) {
-      margin-right: 0;
-      flex: 0 0 100%;
-      margin-bottom: 3rem;
-    }
-  }
-
-  &:hover &__image-box {
-    filter: brightness(0.7);
+  @include respond(phone) {
+    grid-template-columns: 1fr;
   }
 
   &__image {
     border-radius: var(--border-radius-small);
-    max-width: 50rem;
+    object-fit: cover;
+    display: block;
     width: 100%;
-    @media only screen and (max-width: $bp-smallest) {
-      max-width: none;
-    }
+    transition: all 0.3s;
+  }
+
+  &:hover &__image {
+    filter: brightness(0.7);
   }
 
   &__content {
-    margin-right: auto;
-    align-self: flex-start;
-    @media only screen and (max-width: $bp-smallest) {
-      flex: 1;
-    }
-  }
-
-  &__content > * {
-    &:not(:last-child) {
-      margin-bottom: 0.75rem;
-    }
+    display: grid;
+    row-gap: 1rem;
+    align-content: flex-start;
   }
 
   &__title {
@@ -99,10 +75,6 @@
   &__ratings-number {
     color: var(--color-primary-red);
     font-size: 1.25rem;
-  }
-
-  &__tags {
-    display: inline-block;
   }
 
   &__tag-item {

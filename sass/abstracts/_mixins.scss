@@ -52,6 +52,10 @@ ORDER: Base + typography > general layout + grid > page layout > components
       @content;
     } //1800
   }
+
+  @if $breakpoint == 4k-desktop {
+    @media only screen and (min-width: 159em) {
+      @content;
+    }
+  }
 }
-
-

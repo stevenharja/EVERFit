@@ -1,12 +1,10 @@
 .section-program-summary {
   background-color: var(--color-black);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
   padding: 3rem 5rem;
-  padding-bottom: 15rem;
 }
 
 .section-program-content {
   background-color: var(--color-grey-light);
-  padding: 15rem 5rem;
-  margin-top: -15rem;
+  display: grid;
+  row-gap: 5rem;
 }

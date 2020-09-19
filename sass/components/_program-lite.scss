@@ -1,72 +1,8 @@
-.program-lite-full-list {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-
-  @media only screen and (max-width: $bp-smallest) {
-    justify-content: space-around;
-  }
-}
-
-.program-lite-full-list > * {
-  flex: 0 0 20%;
-  @media only screen and (max-width: $bp-large) {
-    flex: 0 0 25%;
-  }
-
-  @media only screen and (max-width: $bp-medium) {
-    flex: 0 0 33%;
-    margin-bottom: 1.5rem;
-  }
-
-  @media only screen and (max-width: $bp-smallest) {
-    flex: 0 0 45%;
-  }
-}
-
-.program-lite-list {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-
-  @media only screen and (max-width: $bp-smallest) {
-    justify-content: space-around;
-  }
-}
-
-.program-lite-list > * {
-  flex: 0 0 25%;
-
-  @media only screen and (max-width: $bp-large) {
-    flex: 0 0 33%;
-    margin-bottom: 1.5rem;
-  }
-
-  @media only screen and (max-width: $bp-medium) {
-    flex: 0 0 50%;
-  }
-
-  @media only screen and (max-width: $bp-smallest) {
-    flex: 0 0 45%;
-  }
-}
-
 .program-lite {
-  &__container {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-  }
-  display: flex;
-  flex-direction: column;
-  background-color: white;
   font-weight: 700;
   cursor: pointer;
-  width: 25rem;
-
-  @media only screen and (max-width: $bp-smallest) {
-    width: 100%;
-  }
+  text-decoration: none;
+  color: inherit;
 
   transition: all 0.3s;
   &__image-box {
@@ -93,16 +29,9 @@
   &__title {
     font-size: var(--font-size-default);
     color: var(--color-black);
-    @media only screen and (max-width: $bp-smallest) {
-      font-size: 3rem;
-    }
   }
   &__creator {
     font-size: 1.2rem;
-
-    @media only screen and (max-width: $bp-smallest) {
-      font-size: 2rem;
-    }
   }
   &__ratings {
     display: flex;

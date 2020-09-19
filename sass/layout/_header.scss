@@ -1,37 +1,28 @@
 .header {
-  height: 95vh;
+  height: 90vh;
+  padding: 3rem;
   background-image: linear-gradient(
-    to bottom right,
-    rgba($color-primary-red, 0.8),
-    rgba($color-primary-blue, 0.8)
-  );
+      to bottom right,
+      rgba($color-primary-red, 0.8),
+      rgba($color-primary-blue, 0.8)
+    ),
+    url(../img/hero-img.jpg);
   background-size: cover;
   background-position: top;
+  background-attachment: fixed;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
-
-  @include respond(tab-land) {
-  }
+  display: grid;
+  justify-items: center;
 
   &__logo-box {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 
   &__logo {
-    height: 5rem;
-    @include respond(tab-land) {
-      height: 7rem;
-    }
+    height: 7rem;
   }
 
   &__text-box {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
   }
 }

@@ -1,61 +1,51 @@
 .sidebar {
-  flex: 0 0 20%;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 2rem;
   border: var(--border-grey);
-  margin-right: 5rem;
-  color: var(--color-black);
-  font-weight: 700;
-  margin-bottom: auto;
-
-  @media only screen and (max-width: $bp-smallest) {
-    flex: 0 0 100%;
-    margin-right: 0;
-    margin-bottom: 3rem;
-  }
-
-  &__main-title {
-    font-size: 1.75rem;
-    padding: 1rem 0;
-    border-bottom: var(--border-bottom-grey);
-  }
-
-  &__filter-box {
+  padding: 2rem;
+  display: grid;
+  grid-auto-rows: minmax(min-content, max-content);
+  row-gap: 1rem;
+  &__title {
+    font-size: 2rem;
+    border-bottom: var(--border-grey);
   }
 
   &__item {
-  }
-
-  &__title {
-    font-size: 1.5rem;
     padding: 1rem 0;
-    border-bottom: var(--border-bottom-grey);
+    border-bottom: var(--border-grey);
+    display: grid;
+    row-gap: 1rem;
   }
 
-  &__options {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
+  &__type {
+    font-size: 1.5rem;
   }
 
   &__options-item {
     display: flex;
-    padding: 0.3rem 0;
-    align-items: center;
   }
 
-  &__options-item > *:not(:last-child) {
-    margin-right: 0.5rem;
+  &__options {
+    display: grid;
+    row-gap: 0.5rem;
   }
 
-  &__checkbox {
-  }
-
-  &__options-item-title {
+  &__label {
     font-size: 1.25rem;
+    cursor: pointer;
   }
 
-  &__options-item-count {
+  &__input {
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+
+  &__button {
+    font-size: 1.5rem;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    background-color: $color-primary-red;
+    border-radius: 3px;
+    color: $color-white;
   }
 }

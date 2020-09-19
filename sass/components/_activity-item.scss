@@ -1,5 +1,5 @@
 .activity-item {
-  border: 3px solid var(--color-primary-red);
+  border: 3px solid $color-grey-light;
   border-radius: 3px;
   background-image: linear-gradient(
     to right bottom,
@@ -13,6 +13,12 @@
   color: var(--color-grey-light);
   padding: 1rem 2rem;
   position: relative;
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 1rem 1rem rgba($color-black, 0.3);
+  }
 
   &--active::after {
     content: "";

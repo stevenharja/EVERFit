@@ -1,11 +1,9 @@
 .section-title {
-  margin: 5rem;
+  margin: 4rem 5rem;
 }
 
 .section-recommended {
-  margin: 3rem 5rem;
-  display: flex;
-  flex-direction: column;
+  padding: 0 5rem;
 }
 
 .section-featured {
@@ -26,10 +24,17 @@
 .section-all-programs {
   margin: 3rem 5rem;
   &__content {
-    display: flex;
-    @media only screen and (max-width: $bp-smallest) {
-      flex-direction: column;
-      justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    column-gap: 2rem;
+    row-gap: 2rem;
+
+    @include respond(tab-port) {
+      grid-template-columns: 2fr 4fr;
+    }
+
+    @include respond(phone) {
+      grid-template-columns: 1fr;
     }
   }
 }

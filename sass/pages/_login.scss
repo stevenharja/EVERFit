@@ -1,0 +1,75 @@
+.login-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100vh;
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+  }
+  &__left {
+    background-image: linear-gradient(
+      to right bottom,
+      $color-primary-red,
+      $color-primary-blue
+    );
+
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    padding: 5rem;
+    row-gap: 2rem;
+  }
+
+  &__right {
+    background-image: linear-gradient(
+        rgba($color-white, 0.9),
+        rgba($color-white, 0.9)
+      ),
+      url(../img/hero-img.jpg);
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    row-gap: 3rem;
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+    padding: 5rem;
+    @include respond(phone) {
+      display: none;
+    }
+  }
+}
+
+.login {
+  display: grid;
+  row-gap: 1rem;
+
+  &__label {
+    font-size: 2rem;
+    color: $color-white;
+  }
+
+  &__input {
+    padding: 0.5rem;
+    font-size: 2rem;
+    width: 30vw;
+    @include respond(phone) {
+      width: 75vw;
+    }
+  }
+
+  &__button {
+    background-color: rgba($color-primary-red, 0.8);
+    margin-top: 2rem;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+    color: $color-white;
+    transition: all 0.3s;
+    &:hover {
+      background-color: rgba($color-primary-red, 1);
+    }
+  }
+}
