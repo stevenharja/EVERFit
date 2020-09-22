@@ -1,0 +1,13 @@
+.btn-small {
+  &__icon {
+    border: var(--border-primary-red);
+    fill: $color-primary-red;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+
+    &:hover {
+      fill: $color-black;
+    }
+  }
+}

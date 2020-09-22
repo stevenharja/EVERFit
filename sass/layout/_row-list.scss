@@ -1,15 +1,34 @@
 .row-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-columns: 1fr;
-  row-gap: 1.5rem;
-  column-gap: 1.5rem;
+  row-gap: 3rem;
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-columns: 1fr;
+    row-gap: 1.5rem;
+    column-gap: 1.5rem;
 
-  @include respond(tab-port) {
-    grid-template-columns: repeat(2, 1fr);
+    @include respond(tab-port) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(phone) {
+    }
+
+    // @include respond(big-desktop) {
+    //   grid-template-columns: repeat(5, 1fr);
+    // }
   }
 
-  @include respond(phone){
-    
+  &__pagination {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, min-content);
+    column-gap: 1.5rem;
+  }
+
+  &__pagination-number {
+    font-size: $font-size-default;
   }
 }

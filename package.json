@@ -4,7 +4,7 @@
   "description": "A website dedicated to health fitness and wellbeing.",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "start": "node-sass sass/main.scss css/style.css -w"
   },
   "author": "Steven Harjapramana",
   "license": "ISC",

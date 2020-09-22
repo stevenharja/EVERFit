@@ -1,0 +1,40 @@
+.user-profile {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 2fr 5fr;
+  min-height: 100vh;
+  box-shadow: 0 1rem 5rem rgba($color-black, 0.1);
+  @include respond(tab-port) {
+    grid-template-columns: 1fr;
+  }
+  &__menu {
+    background-image: linear-gradient(
+      to right bottom,
+      $color-primary-red,
+      $color-primary-blue
+    );
+    color: $color-white;
+    font-size: 5rem;
+    text-align: center;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 5rem 3rem;
+  }
+  &__content {
+    border: var(--border-primary-red);
+  }
+  &__form-container {
+    padding: 5rem 10rem;
+    @include respond(tab-land) {
+      padding: 5rem;
+    }
+  }
+  &__line-breaks {
+    border-bottom: var(--border-grey);
+  }
+
+  //   &__form-user-data {
+  //   }
+  //   &__form-password {
+  //   }
+}

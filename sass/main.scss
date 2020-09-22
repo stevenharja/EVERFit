@@ -11,9 +11,11 @@
 @import "pages/select-programs";
 @import "pages/programs";
 @import "pages/login";
+@import "pages/account";
 
 @import "components/bg-video";
 @import "components/button";
+@import "components/btn-small";
 @import "components/feature-card";
 @import "components/img-composition";
 @import "components/testimony";
@@ -22,6 +24,7 @@
 @import "components/program-introduction";
 @import "components/program-part";
 @import "components/activity-item";
+@import "components/form";
 
 @import "layout/header";
 @import "layout/footer";
@@ -30,3 +33,4 @@
 @import "layout/sidebar";
 @import "layout/footer-alt";
 @import "layout/row-list";
+@import "layout/user-profile";

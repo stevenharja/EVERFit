@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EVERFit - My Account</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700,900"
+    />
+    <link rel="stylesheet" href="css/icofont.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header-alt">
+      <div class="header-alt__logo-box">
+        <img src="img/logo-fit-ever.png" alt="Logo" class="header-alt__logo" />
+      </div>
+      <form class="header-alt__search-box">
+        <input
+          type="text"
+          class="header-alt__search-input"
+          placeholder="Search for programs here..."
+        />
+        <button class="header-alt__search-button">
+          <svg class="header-alt__search-icon">
+            <use xlink:href="img/sprite.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+
+      <input
+        type="checkbox"
+        class="header-alt__checkbox"
+        id="header-alt__menu"
+      />
+      <label for="header-alt__menu" class="header-alt__menu-label">
+        <!-- <span class="header-alt__menu-logo"></span> -->
+        <svg class="header-alt__menu-logo">
+          <use xlink:href="img/sprite.svg#icon-menu"></use>
+        </svg>
+      </label>
+      <nav class="header-alt__nav">
+        <div class="header-alt__nav-item">
+          <a href="#" class="header-alt__nav-link">Home</a>
+        </div>
+        <div class="header-alt__nav-item">
+          <a href="#" class="header-alt__nav-link">My Programs</a>
+        </div>
+        <div class="header-alt__nav-item">
+          <a href="account.html" class="header-alt__nav-link">Account</a>
+        </div>
+        <div class="header-alt__nav-item header-alt__nav-item--priority">
+          <figure class="header-alt__nav-user">
+            <img
+              src="img/profile-img.jpg"
+              alt="Profile picture"
+              class="header-alt__nav-user-img"
+            />
+            <svg class="header-alt__nav-user-icon">
+              <use xlink:href="img/sprite.svg#icon-cogs"></use>
+            </svg>
+          </figure>
+        </div>
+      </nav>
+    </header>
+
+    <main class="section-account">
+      <div class="user-profile">
+        <div class="user-profile__menu">My Profile</div>
+        <div class="user-profile__content">
+          <div class="user-profile__form-container">
+            <h2 class="heading-secondary u-margin-bottom-medium">
+              Your Details
+            </h2>
+            <form class="form form-user-data">
+              <div class="form__group">
+                <label for="user-name" class="form__group-label"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  class="form__group-input"
+                  id="user-name"
+                  name="user-name"
+                  placeholder="Enter your name here..."
+                  required
+                />
+              </div>
+              <div class="form__group">
+                <label for="user-name" class="form__group-label">Email</label>
+                <input
+                  type="text"
+                  class="form__group-input"
+                  id="user-email"
+                  name="user-email"
+                  placeholder="Enter your email here..."
+                  required
+                />
+              </div>
+              <div class="form__group form__group--side">
+                <img
+                  src="img/testimony-1.jpg"
+                  alt="User 1"
+                  class="form__user-photo"
+                />
+                <input
+                  type="file"
+                  class="form__upload"
+                  accept="image/*"
+                  id="photo"
+                  name="photo"
+                />
+                <label for="photo">Upload a new photo</label>
+              </div>
+
+              <div class="form__group form__group--button">
+                <button class="form__button" type="submit">Save Changes</button>
+              </div>
+            </form>
+          </div>
+          <div class="user-profile__line-breaks">&nbsp;</div>
+          <div class="user-profile__form-container">
+            <form class="form form-password">
+              <h2 class="heading-secondary u-margin-bottom-medium">Password</h2>
+              <div class="form__group">
+                <label for="current-password" class="form__group-label"
+                  >Current Password</label
+                >
+                <input
+                  type="password"
+                  class="form__group-input"
+                  id="current-password"
+                  name="current-password"
+                  placeholder="••••••••"
+                  required
+                />
+              </div>
+              <div class="form__group">
+                <label for="new-password" class="form__group-label"
+                  >New Password</label
+                >
+                <input
+                  type="password"
+                  class="form__group-input"
+                  id="new-password"
+                  name="new-password"
+                  placeholder="••••••••"
+                  required
+                />
+              </div>
+              <div class="form__group">
+                <label for="confirm-password" class="form__group-label"
+                  >Confirm New Password</label
+                >
+                <input
+                  type="text"
+                  class="form__group-input"
+                  id="confirm-password"
+                  name="confirm-password"
+                  placeholder="••••••••"
+                  required
+                />
+              </div>
+
+              <div class="form__group form__group--button">
+                <button class="form__button" type="submit">
+                  Change Password
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

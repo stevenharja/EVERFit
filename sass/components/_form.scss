@@ -1,0 +1,82 @@
+.form {
+  display: grid;
+  row-gap: 3rem;
+  &__group {
+    display: grid;
+    row-gap: 1rem;
+
+    &--side {
+      grid-template-columns: repeat(2, max-content);
+      column-gap: 1.5rem;
+      align-items: center;
+    }
+  }
+
+  &__group-label {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__group-input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    padding: 1rem 2.5rem;
+    border: none;
+    background-color: $color-grey-light;
+    border-radius: 3px;
+    transition: all 0.3s;
+    border: var(--border-transparent);
+
+    &:focus {
+      outline: none;
+      border: var(--border-primary-red);
+    }
+  }
+
+  &__upload {
+    display: none;
+
+    & + * {
+      font-family: inherit;
+      font-size: 1.5rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid $color-primary-red;
+      color: $color-primary-red;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: 700;
+      transition: all 0.5s;
+
+      &:hover {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-red,
+          $color-primary-blue
+        );
+        color: $color-white;
+      }
+    }
+  }
+
+  &__user-photo {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__button {
+    border: none;
+    font-size: 2rem;
+    text-transform: uppercase;
+    background-color: rgba($color-primary-red, 0.9);
+    color: $color-white;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: rgba($color-primary-red, 1);
+    }
+  }
+}

@@ -27,3 +27,8 @@ html {
 body {
   box-sizing: border-box;
 }
+
+::selection {
+  color: $color-white;
+  background-color: $color-primary-red;
+}
