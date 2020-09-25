@@ -2,14 +2,39 @@
   "name": "everfit",
   "version": "1.0.0",
   "description": "A website dedicated to health fitness and wellbeing.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node-sass sass/main.scss css/style.css -w"
+    "edit:sass": "node-sass sass/main.scss css/style.css -w",
+    "start": "nodemon server.js",
+    "start:prod": "NODE_ENV=production nodemon server.js"
   },
   "author": "Steven Harjapramana",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.14.1"
+    "node-sass": "^4.14.1",
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.1.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.6",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.4.11",
+    "slugify": "^1.4.5",
+    "validator": "^13.1.17"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
 }
