@@ -1,0 +1,37 @@
+extends base
+include _programLite
+include _program
+include _sidebar
+
+block content
+    .section-title
+        h2.heading-secondary.heading-secondary--gradient
+            | All Programs
+
+    main
+        section.section-recommended
+            .u-margin-bottom-small
+                h2.heading-secondary-sub
+                    | Recommended Programs Based On Your History
+            .row-list
+                .row-list__content
+                    each program in programs
+                        +programLite(program)
+                    
+        section.section-featured
+            .u-margin-bottom-small
+                h2.heading-secondary-sub.heading-secondary-sub--white
+                    | Our Weekly Top Pick
+            +program(topProgram)
+
+        section.section-all-programs
+            .u-margin-bottom-small
+                h2.heading-secondary-sub
+                    | Our Programs
+            .section-all-programs__content
+                +sidebar()
+                .row-list
+                    .row-list__content
+                        each program in programs
+                            +programLite(program)
+

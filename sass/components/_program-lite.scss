@@ -56,6 +56,7 @@
     padding: 0.25rem;
     border-radius: var(--border-radius-large);
     transition: all 0.2s;
+    text-transform: uppercase;
     &:hover {
       background-color: var(--color-primary-red);
       color: var(--color-grey-light-2);

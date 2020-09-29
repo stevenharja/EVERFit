@@ -1,0 +1,30 @@
+doctype html
+html
+    head
+        block head
+            meta(charset="UTF-8")
+            meta(name="viewport" content="width=device-width, initial-scale=1.0")
+            link(rel="stylesheet" href="/css/style.css")
+            link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700,900")
+            link(rel="stylesheet" href="/css/icofont.css")
+            title EVERFit | #{title}
+    
+    body
+        main.login-container
+            .login-container__left
+                h2.heading-secondary.heading-secondary--white
+                    | Your journey to health starts here.
+                h3.heading-secondary-sub.heading-secondary--white
+                    | Log in now to save your progress on our programs.
+            .login-container__right
+                h2.heading-secondary.heading-secondary--gradient
+                    | Log In To EVERFit
+                form.login
+                    label.login__label(for="email") Email
+                    input#email.login__input(type="email" placeholder="Please enter your email address...")
+                    label.login__label(for="password") Password
+                    input#password.login__input(type="password" placeholder="Please enter your password...")
+                    button.login__button(type="submit") Log In
+
+        script(src="/js/bundle.js")
+

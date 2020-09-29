@@ -30,6 +30,8 @@ router
   .patch(
     authController.protect,
     authController.restrictTo('trainer', 'admin'),
+    programController.uploadProgramImage,
+    programController.resizeProgramImage,
     programController.updateProgram
   )
   .delete(

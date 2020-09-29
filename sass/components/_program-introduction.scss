@@ -3,16 +3,42 @@
   grid-template-columns: 1fr 1fr;
   color: var(--color-grey-light);
   column-gap: 3rem;
+  position: relative;
 
   @include respond(phone) {
     grid-template-columns: 1fr;
+  }
+
+  &__nav {
+    position: absolute;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: inherit;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      &::after {
+        content: '/';
+        margin: 5px;
+        color: $color-grey-light;
+      }
+    }
+
+    &:hover {
+      color: $color-primary-red;
+    }
   }
 
   &__text {
     font-size: 1.5rem;
     font-weight: 700;
     display: grid;
-    row-gap: 1.5rem;
+    row-gap: 1rem;
     align-content: center;
   }
 
@@ -51,5 +77,34 @@
     width: 2rem;
     height: 2rem;
     fill: var(--color-gold);
+  }
+
+  &__cta {
+    display: flex;
+
+    & > *:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  &__button {
+    font-size: $font-size-default;
+    font-weight: 700;
+    padding: 1rem;
+    border-radius: 3px;
+    font-family: inherit;
+    background-color: inherit;
+    color: inherit;
+    border: var(--border-grey);
+    cursor: pointer;
+
+    &:hover {
+    }
+  }
+
+  &__icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: $color-grey-light;
   }
 }

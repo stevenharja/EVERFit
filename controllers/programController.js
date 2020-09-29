@@ -1,8 +1,41 @@
+const multer = require('multer');
+const sharp = require('sharp');
+
 const catchAsync = require('../utils/catchAsync');
 const factory = require('./handlerFactory');
 const Program = require('../models/programModel');
 const AppError = require('../utils/appError');
 const APIFeatures = require('../utils/apiFeatures');
+
+const multerStorage = multer.memoryStorage();
+
+const multerFilter = (req, file, callback) => {
+  if (file.mimetype.startsWith('image')) {
+    callback(null, true);
+  } else {
+    callback(new AppError('Not an image! Please upload only images.'));
+  }
+};
+
+const upload = multer({
+  storage: multerStorage,
+  fileFilter: multerFilter,
+});
+
+exports.uploadProgramImage = upload.single('imageCover');
+
+exports.resizeProgramImage = catchAsync(async (req, res, next) => {
+  if (!req.file) return next();
+
+  req.body.imageCover = `program-${req.params.id}-${Date.now()}-cover.jpeg`;
+  await sharp(req.file.buffer)
+    .resize(2000, 1333)
+    .toFormat('jpeg')
+    .jpeg({ quality: 90 })
+    .toFile(`public/img/programs/${req.body.imageCover}`);
+
+  next();
+});
 
 //Get programs based on their category.
 //Also sort them by ratings.

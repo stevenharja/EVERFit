@@ -1,6 +1,6 @@
 .section-account {
-  padding: 5rem 10rem;
+  margin: 5rem 10rem;
   @include respond(phone) {
-    padding: 3rem 2rem;
+    margin: 0;
   }
 }

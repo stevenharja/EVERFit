@@ -6,7 +6,7 @@ const router = express.Router();
 //Login operations from authController
 router.post('/signup', authController.signup);
 router.post('/login', authController.login);
-router.post('/logout', authController.logout);
+router.get('/logout', authController.logout);
 
 router.post('/forgotPassword', authController.forgotPassword);
 router.post('/resetPassword/:token', authController.resetPassword);
@@ -20,9 +20,13 @@ router.get('/me', userController.getMe, userController.getUser);
 //Will not work if the 3 is not available.
 router.patch('/updateMyPassword', authController.updatePassword);
 
-//Update name and email
-//TODO Add photo requirements.
-router.patch('/updateMe', userController.updateMe);
+//Update name and email, photo
+router.patch(
+  '/updateMe',
+  userController.uploadUserPhoto,
+  userController.resizeUserPhoto,
+  userController.updateMe
+);
 
 //Make account inactive (Does not deletes it completely)
 router.delete('/deleteMe', userController.deleteMe);

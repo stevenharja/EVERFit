@@ -1,0 +1,33 @@
+extends base
+include _programLite
+include _program
+
+block content
+    .section-title
+        h2.heading-secondary.heading-secondary--gradient= `${category} programs`
+
+    main
+        - console.log(programs)
+        section.section-recommended
+            .u-margin-bottom-small
+                h2.heading-secondary-sub
+                    | Recommended Programs Based On Your History
+            .row-list
+                .row-list__content
+                    each program in programs
+                        +programLite(program)
+                    
+        section.section-featured
+            .u-margin-bottom-small
+                h2.heading-secondary-sub.heading-secondary-sub--white
+                    | Our Weekly Top Pick
+            +program(topProgram)
+
+        section.section-recommended
+            .u-margin-bottom-small
+                h2.heading-secondary-sub
+                    | Our Programs
+            .row-list
+                .row-list__content
+                    each program in programs
+                        +programLite(program)    

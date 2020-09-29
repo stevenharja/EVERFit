@@ -1,0 +1,24 @@
+mixin programLite(program)
+    a.program-lite(href=`/programs/${program.slug}`)
+        .program-lite__image-box
+            // Contains Image
+            img.program-lite__image(src=`/img/programs/${program.imageCover}` alt="Program 1")
+        .program-lite__content
+            // Contains the level/days, reviews, ratings, who created it etc
+            .program-lite__title= program.name
+            .program-lite__creator= program.user.name
+            .program-lite__ratings
+                .program-lite__star-number= program.ratingsAverage
+                .program-lite__stars
+                    each star in [1, 2, 3, 4, 5]
+                        if program.ratingsAverage >= star
+                            svg.program-lite__icon-star
+                                use(xlink:href="/img/sprite.svg#icon-star-full")
+                        else if program.ratingsAverage < star && program.ratingsAverage > star - 1
+                            svg.program-lite__icon-star
+                                use(xlink:href="/img/sprite.svg#icon-star-half")
+                        else
+                            svg.program-lite__icon-star
+                                use(xlink:href="/img/sprite.svg#icon-star-empty")                        
+            .program-lite__tags
+                span.program-lite__tag-item= program.category

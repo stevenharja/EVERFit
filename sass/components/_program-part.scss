@@ -6,10 +6,10 @@
   cursor: default;
   padding: 3rem 5rem;
 
-  &--active &__title::before {
-    visibility: visible;
-    animation: underlineText 2s infinite;
-  }
+  // &--active &__title::before {
+  //   visibility: visible;
+  //   animation: underlineText 2s infinite;
+  // }
 
   &--bg-gradient {
     background-image: linear-gradient(
@@ -30,7 +30,7 @@
     position: relative;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       bottom: 0;

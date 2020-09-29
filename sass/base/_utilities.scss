@@ -21,3 +21,8 @@
 .sticky + * {
   padding-top: 7.5rem;
 }
+
+//Only for Body.
+.show-popup {
+  overflow: hidden;
+}

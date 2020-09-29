@@ -1,0 +1,11 @@
+mixin programSection(section, index)
+    .program-part(class=`${index % 2 == 0 ? 'program-part--bg-gradient':''}`)
+        .program-part__title= section.name
+        ul.program-part__activity-list
+            each activity in section.activity
+                li.activity-item.activity-item--completed
+                    img.activity-item__img(src="/img/program-4.jpg" alt="Exercise 1")
+                    .activity-item__title= activity.name
+                    .activity-item__summary= activity.summary
+        // .program-part__repeat Repeat 5 Times
+        .program-part__start-red= `Start ${section.name}`

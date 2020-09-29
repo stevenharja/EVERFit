@@ -1,0 +1,37 @@
+mixin sidebar()
+    form.sidebar
+        h1.sidebar__title Filter
+        .sidebar__item
+            .sidebar__type Categories
+            .sidebar__options
+                .sidebar__options-item
+                    input#cardio.sidebar__input(type="checkbox")
+                    label.sidebar__label(for="cardio") Cardio (5,000)
+                .sidebar__options-item
+                    input#gym.sidebar__input(type="checkbox")
+                    label.sidebar__label(for="gym") Gym (5,000)
+                .sidebar__options-item
+                    input#home.sidebar__input(type="checkbox")
+                    label.sidebar__label(for="home") Home (5,000)
+        .sidebar__item
+            .sidebar__type Daily Workout
+            .sidebar__options
+                .sidebar__options-item
+                    input#30min.sidebar__input(type="checkbox")
+                    label.sidebar__label(for="30min") 30 minutes (5,000)
+                .sidebar__options-item
+                    input#45min.sidebar__input(type="checkbox")
+                    label.sidebar__label(for="45min") 45 minutes (5,000)
+                .sidebar__options-item
+                    input#60min.sidebar__input(type="checkbox")
+                    label.sidebar__label(for="60min") 60+ minutes (5,000)
+        .sidebar__item
+            .sidebar__type Type
+            .sidebar__options
+                .sidebar__options-item
+                    input#premium.sidebar__input(type="checkbox")
+                    label.sidebar__label(for="premium") Premium (5,000)
+                .sidebar__options-item
+                    input#free.sidebar__input(type="checkbox")
+                    label.sidebar__label(for="free") Free (5,000)
+        button.sidebar__button(type="submit") Search

@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        block head
+            meta(charset="UTF-8")
+            meta(name="viewport" content="width=device-width, initial-scale=1.0")
+            link(rel="stylesheet" href="/css/style.css")
+            link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700,900")
+            link(rel="stylesheet" href="/css/icofont.css")
+            title EVERFit | #{title}
+    
+    body
+        // Header
+        include _header
+
+        // Content
+        block content
+            h1 Placeholder
+
+        // Footer
+        include _footer
+
+        script(src="/js/bundle.js")

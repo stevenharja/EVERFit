@@ -1,0 +1,141 @@
+.popup {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  padding: 10vh 10vw;
+  position: fixed;
+  background-color: rgba($color-black, 0.7);
+  z-index: 99;
+  display: none;
+  overflow: auto;
+
+  @include respond(tab-land) {
+    padding: 5vh 5vw;
+  }
+
+  &__box {
+    background-color: $color-white;
+    width: 100%;
+    position: relative;
+    padding: 5rem 9rem;
+    border-radius: 3px;
+  }
+
+  &--completed &__box {
+    background-image: none;
+    background-color: $color-secondary-dark;
+  }
+
+  &--completed &__icon {
+    fill: rgba($color-white, 0.8);
+  }
+  &--completed &__button:hover > &__icon {
+    fill: rgba($color-white, 1);
+    transform: scale(1.2);
+  }
+
+  &--completed &__title,
+  &--completed &__summary,
+  &--completed &__description {
+    color: $color-white;
+  }
+
+  &--completed &__media {
+    border: var(--border-grey);
+  }
+
+  &__button {
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:focus {
+      outline: none;
+    }
+
+    &--close {
+      top: 2rem;
+      right: 2rem;
+    }
+
+    &--right {
+      top: 50%;
+      right: 2rem;
+      transform: scale(1.5) translateY(-50%);
+    }
+
+    &--left {
+      top: 50%;
+      left: 2rem;
+      transform: scale(1.5) translateY(-50%);
+    }
+  }
+
+  &__button:hover > &__icon {
+    fill: rgba($color-primary-red, 1);
+    transform: scale(1.2);
+  }
+
+  &__icon {
+    width: 4rem;
+    height: 4rem;
+    fill: rgba($color-primary-red, 0.8);
+    transition: all 0.2s ease-out;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    column-gap: 3rem;
+    row-gap: 3rem;
+
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+  }
+
+  &__media {
+    width: 50rem;
+    border: var(--border-primary-red);
+    @include respond(tab-port) {
+      width: 100%;
+    }
+    @include respond(big-desktop) {
+      width: 60rem;
+    }
+  }
+
+  &__text {
+    & > *:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-large;
+    text-transform: uppercase;
+    color: $color-primary-red;
+    @include respond(tab-port) {
+      text-align: center;
+    }
+  }
+
+  &__summary {
+    font-size: 2.25rem;
+    @include respond(tab-port) {
+      text-align: center;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+    font-size: 2rem;
+    @include respond(tab-port) {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+header.header-alt
+	.header-alt__logo-box
+		img.header-alt__logo(src="/img/logo-fit-ever.png" alt="Logo")
+	form.header-alt__search-box
+		input.header-alt__search-input(type="text" placeholder="Search for programs here...")
+		button.header-alt__search-button
+			svg.header-alt__search-icon
+				use(xlink:href="/img/sprite.svg#icon-search")
+	input#header-alt__menu.header-alt__checkbox(type="checkbox")
+	label.header-alt__menu-label(for="header-alt__menu")
+		svg.header-alt__menu-logo
+			use(xlink:href="/img/sprite.svg#icon-menu")
+	nav.header-alt__nav
+		if user
+			.header-alt__nav-item
+				a.header-alt__nav-link(href="/") Home
+			.header-alt__nav-item
+				a#logout.header-alt__nav-link Log Out
+			.header-alt__nav-item
+				a.header-alt__nav-link(href="/account") Account
+			.header-alt__nav-item.header-alt__nav-item--priority
+				a(href="/account")
+					figure.header-alt__nav-user
+						img.header-alt__nav-user-img(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
+						svg.header-alt__nav-user-icon
+							use(xlink:href="/img/sprite.svg#icon-cogs")
+		else
+			.header-alt__nav-item
+				a.header-alt__nav-link(href="/login") Login
+			.header-alt__nav-item
+				a.header-alt__nav-link(href="#") Sign Up

@@ -1,0 +1,39 @@
+extends base
+
+block content
+    main.section-account
+        .user-profile
+            .user-profile__menu My Profile
+            .user-profile__content
+                .user-profile__form-container
+                    h2.heading-secondary.u-margin-bottom-medium
+                        | Your Details
+                    form.form.form-user-data
+                        .form__group
+                            label.form__group-label(for="user-name") Full Name
+                            input#user-name.form__group-input(type="text" name="user-name" placeholder="Enter your name here..." required value=`${user.name}`)
+                        .form__group
+                            label.form__group-label(for="user-name") Email
+                            input#user-email.form__group-input(type="text" name="user-email" placeholder="Enter your email here..." required value=`${user.email}`)
+                        .form__group.form__group--side
+                            img.form__user-photo(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
+                            input#photo.form__upload(type="file" accept="image/*" name="photo")
+                            label(for="photo") Upload a new photo
+                        .form__group.form__group--button.btn-user-data
+                            button.form__button(type="submit") Save Changes
+                .user-profile__line-breaks  
+                .user-profile__form-container
+                    form.form.form-password
+                        h2.heading-secondary.u-margin-bottom-medium Password
+                        .form__group
+                            label.form__group-label(for="current-password") Current Password
+                            input#current-password.form__group-input(type="password" name="current-password" placeholder="••••••••" required)
+                        .form__group
+                            label.form__group-label(for="new-password") New Password
+                            input#new-password.form__group-input(type="password" name="new-password" placeholder="••••••••" required)
+                        .form__group
+                            label.form__group-label(for="confirm-password") Confirm New Password
+                            input#confirm-password.form__group-input(type="password" name="confirm-password" placeholder="••••••••" required)
+                        .form__group.form__group--button.btn-password
+                            button.form__button(type="submit")
+                                | Change Password

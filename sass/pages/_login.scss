@@ -5,25 +5,14 @@
 
   @include respond(phone) {
     grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content;
   }
+
   &__left {
     background-image: linear-gradient(
-      to right bottom,
-      $color-primary-red,
-      $color-primary-blue
-    );
-
-    display: grid;
-    align-content: center;
-    justify-items: center;
-    padding: 5rem;
-    row-gap: 2rem;
-  }
-
-  &__right {
-    background-image: linear-gradient(
-        rgba($color-white, 0.9),
-        rgba($color-white, 0.9)
+        to right bottom,
+        rgba($color-primary-red, 0.7),
+        rgba($color-primary-blue, 0.7)
       ),
       url(../img/hero-img.jpg);
     background-position: center;
@@ -34,9 +23,15 @@
     justify-items: center;
     text-align: center;
     padding: 5rem;
-    @include respond(phone) {
-      display: none;
-    }
+  }
+
+  &__right {
+    background-color: $color-white;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    padding: 5rem;
+    row-gap: 2rem;
   }
 }
 
@@ -46,7 +41,8 @@
 
   &__label {
     font-size: 2rem;
-    color: $color-white;
+    color: $color-primary-red;
+    font-weight: 700;
   }
 
   &__input {

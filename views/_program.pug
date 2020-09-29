@@ -1,0 +1,25 @@
+mixin program(program)
+    a.program(href=`/programs/${program.slug}`)
+        // Contains Image
+        img.program__image(src=`/img/programs/${program.imageCover}` alt=`${program.name}`)
+        .program__content
+            .program__title= program.name
+            .program__creator= program.user.name
+            // .program__lecture-count 34 total lectures
+            .program__description= program.description
+            .program__ratings
+                .program__star-number= program.ratingsAverage
+                .program__stars
+                    each star in [1, 2, 3, 4, 5]
+                        if program.ratingsAverage >= star
+                            svg.program__icon-star
+                                use(xlink:href="/img/sprite.svg#icon-star-full")
+                        else if program.ratingsAverage < star && program.ratingsAverage > star - 1
+                            svg.program__icon-star
+                                use(xlink:href="/img/sprite.svg#icon-star-half") 
+                        else
+                            svg.program__icon-star
+                                use(xlink:href="/img/sprite.svg#icon-star-empty")                           
+                .program__ratings-number= `(${program.reviews.length})`
+            .program__tags
+                span.program__tag-item= program.category

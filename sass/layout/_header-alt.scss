@@ -7,7 +7,7 @@
   background-image: linear-gradient(
     to right,
     var(--color-primary-red),
-    var(--color-black)
+    var(--color-primary-blue)
   );
   font-size: var(--font-size-default);
   color: var(--color-grey-light);
@@ -112,24 +112,21 @@
   }
 
   &__nav-link {
-    &:visited,
-    &:link {
-      text-transform: uppercase;
-      padding: 1rem;
-      text-decoration: none;
-      color: inherit;
-      background-image: linear-gradient(
-        140deg,
-        transparent 0%,
-        transparent 50%,
-        white 50%
-      );
-      background-size: 300%;
-      transition: all 0.3s;
+    text-transform: uppercase;
+    padding: 1rem;
+    text-decoration: none;
+    color: inherit;
+    background-image: linear-gradient(
+      140deg,
+      transparent 0%,
+      transparent 50%,
+      white 50%
+    );
+    background-size: 300%;
+    transition: all 0.3s;
 
-      @include respond(tab-port) {
-        font-size: 4rem;
-      }
+    @include respond(tab-port) {
+      font-size: 4rem;
     }
 
     &:hover,

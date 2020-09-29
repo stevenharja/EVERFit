@@ -1,0 +1,63 @@
+extends base
+include _programSection
+
+block content
+    - console.log(program.sections)
+    main
+        section.section-program-summary
+            .program-introduction
+                .program-introduction__nav
+                    a.program-introduction__nav-link(href="/") Home
+                    a.program-introduction__nav-link(href=`/programs/category/${program.category}`)= program.category
+                    a.program-introduction__nav-link= program.name
+                .program-introduction__text
+                    .program-introduction__title= program.name
+                    .program-introduction__creator= program.user.name
+                    // .program-introduction__lecture-count
+                    .program-introduction__description= program.description
+                    .program-introduction__ratings
+                        .program-introduction__star-number= program.ratingsAverage
+                        .program-introduction__stars
+                            each star in [1, 2, 3, 4, 5]
+                                if program.ratingsAverage >= star
+                                    svg.program-introduction__icon-star
+                                        use(xlink:href="/img/sprite.svg#icon-star-full")
+                                else if program.ratingsAverage < star && program.ratingsAverage > star - 1
+                                    svg.program-introduction__icon-star
+                                        use(xlink:href="/img/sprite.svg#icon-star-half") 
+                                else
+                                    svg.program-introduction__icon-star
+                                        use(xlink:href="/img/sprite.svg#icon-star-empty")  
+                    .program-introduction__cta
+                        button.program-introduction__button
+                            | Add To Library
+                        button.program-introduction__button
+                            | Wishlist
+                            svg.program-introduction__icon
+                                use(xlink:href="/img/sprite.svg#icon-heart")
+                .program-introduction__video-container
+                    img.program-introduction__video-content(src=`/img/programs/${program.imageCover}`)
+                    //video.program-introduction__video-content(controls="" autoplay="" muted="" loop="")
+                    //    source(src="/video/program-introduction-video-1.mp4" type="video/mp4")
+                    //    |               Your browser is not supported.
+
+        section.section-program-content
+            - let index = 0
+            each section in program.sections
+                - index++
+                +programSection(section, index)
+        
+        .popup.popup--completed
+            .popup__box
+                button.popup__button.popup__button--close
+                    svg.popup__icon
+                        use(xlink:href="/img/sprite.svg#icon-close")
+                button.popup__button.popup__button--right
+                    svg.popup__icon
+                        use(xlink:href="/img/sprite.svg#icon-arrow-right")
+                button.popup__button.popup__button--left
+                    svg.popup__icon
+                        use(xlink:href="/img/sprite.svg#icon-arrow-left")
+                .popup__content
+
+
