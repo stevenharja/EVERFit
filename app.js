@@ -8,6 +8,7 @@ const xss = require('xss-clean');
 const cors = require('cors');
 const path = require('path');
 const hpp = require('hpp');
+const compression = require('compression');
 
 const AppError = require('./utils/appError');
 
@@ -85,6 +86,8 @@ app.use(
     whitelist: ['ratingsQuantity', 'ratingsAverage'],
   })
 );
+
+app.use(compression());
 
 // ROUTES
 app.use('/', viewRouter);
