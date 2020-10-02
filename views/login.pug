@@ -19,12 +19,14 @@ html
             .login-container__right
                 h2.heading-secondary.heading-secondary--gradient
                     | Log In To EVERFit
-                form.login
+                form.login#login
                     label.login__label(for="email") Email
                     input#email.login__input(type="email" placeholder="Please enter your email address...")
                     label.login__label(for="password") Password
                     input#password.login__input(type="password" placeholder="Please enter your password...")
                     button.login__button(type="submit") Log In
+
+                a(href="/signup") Do you want to sign up? 
 
         script(src="/js/bundle.js")
 

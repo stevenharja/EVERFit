@@ -1,6 +1,25 @@
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const APIFeatures = require('../utils/apiFeatures');
+const multer = require('multer');
+
+const multerStorage = multer.memoryStorage();
+
+const multerFilter = (req, file, callback) => {
+  if (file.mimetype.startsWith('image')) {
+    callback(null, true);
+  } else {
+    callback(
+      new AppError('Not an image! Please upload only images.', 400),
+      false
+    );
+  }
+};
+
+const upload = multer({
+  storage: multerStorage,
+  fileFilter: multerFilter,
+});
 
 exports.deleteOne = (Model, onlyUser) =>
   catchAsync(async (req, res, next) => {
@@ -26,7 +45,7 @@ exports.deleteOne = (Model, onlyUser) =>
 //Except for admin.
 exports.updateOne = (Model, onlyUser) =>
   catchAsync(async (req, res, next) => {
-    //Allow admin to overwrite this rule.
+    // Allow admin to overwrite this rule.
     if (onlyUser && req.user.role !== 'admin') {
       req.params = { _id: req.params.id, user: req.user.id };
     } else {
@@ -107,3 +126,5 @@ exports.getAll = (Model) =>
       },
     });
   });
+
+exports.handleMultipartForm = upload.none();

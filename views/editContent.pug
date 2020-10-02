@@ -1,0 +1,51 @@
+extends base
+
+block content
+    main.content-summary-box
+        h2.heading-secondary.heading-secondary--white.u-margin-bottom-medium= `Edit ${doc.name}`
+        .content-summary
+            .content-summary__text
+                form.form#form-edit
+                    .form__group
+                        label.form__group-label(for="name")= ` Name`
+                        input#name.form__group-input(type="text" name="name" value=`${doc.name}`)
+                    if model !== 'sections'
+                        .form__group
+                            label.form__group-label(for="Summary")= ` Summary`
+                            textarea#summary.form__group-input(type="text" name="Summary" rows="5")= `${doc.summary}`
+                    if model === 'programs'
+                        .form__group
+                            label.form__group-label(for="category") Change Category
+                            select#category.form__group-input(name="category")
+                                option(value="workout") Workout
+                                option(value="diet") Diet
+                                option(value="mindfulness") Mindfulness
+                    if model !== 'sections'
+                        .form__group.form__group--side
+                            input#imageCover.form__upload(type="file" accept="image/*" name="imageCover")
+                            label(for="imageCover") Upload new photo
+                        .form__group
+                            label.form__group-label(for="description")= ` Description`
+                            textarea#description.form__group-input(type="text" name="description" rows="10")= `${doc.description}`
+                    .content-summary__cta
+                        button.content-summary__button(type="submit")
+                            | Save
+            if model !== 'sections'
+                .content-summary__media-container
+                    img#img-thumbnail-modify.content-summary__media-content(src=`/img/${model}/${model === 'programs' ? doc.imageCover : doc.media}`)
+
+    if model === 'programs' && doc.sections.length > 0
+        section.content-child-box
+            .content-child
+                h2.heading-secondary.heading-secondary--gradient.u-margin-bottom-medium
+                    | Edit Sections
+                each section in doc.sections
+                    a.dropdown-box(href=`/edit/sections/${section.id}`)= `${section.name}`
+
+    if model === 'sections' && doc.activity.length > 0
+        section.content-child-box
+            .content-child
+                h2.heading-secondary.heading-secondary--gradient.u-margin-bottom-medium
+                    | Edit Activity
+                each activity in doc.activity
+                    a.dropdown-box(href=`/edit/activities/${activity.id}`)= `${activity.name}`                

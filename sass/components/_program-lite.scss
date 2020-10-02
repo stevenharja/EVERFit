@@ -52,13 +52,14 @@
   }
 
   &__tag-item {
-    border: var(--border-grey);
-    padding: 0.25rem;
+    padding: 0.5rem;
     border-radius: var(--border-radius-large);
     transition: all 0.2s;
     text-transform: uppercase;
+    background-color: rgba($color-primary-red, 0.8);
+    color: $color-white;
     &:hover {
-      background-color: var(--color-primary-red);
+      background-color: rgba($color-primary-red, 1);
       color: var(--color-grey-light-2);
     }
 

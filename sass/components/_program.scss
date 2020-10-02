@@ -47,7 +47,7 @@
   }
 
   &__description {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: 400;
   }
 
@@ -79,11 +79,11 @@
 
   &__tag-item {
     font-size: 1.25rem;
-    font-weight: 400;
-    color: var(--color-brown);
+    font-weight: 700;
+    color: var(--color-black);
     padding: 0.5rem;
     border-radius: var(--border-radius-small);
-    background-color: var(--color-gold-2);
+    background-color: var(--color-gold);
     text-transform: uppercase;
   }
 }

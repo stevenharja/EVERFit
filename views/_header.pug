@@ -2,8 +2,8 @@ header.header-alt
 	.header-alt__logo-box
 		img.header-alt__logo(src="/img/logo-fit-ever.png" alt="Logo")
 	form.header-alt__search-box
-		input.header-alt__search-input(type="text" placeholder="Search for programs here...")
-		button.header-alt__search-button
+		input.header-alt__search-input#searchProgram(type="text" placeholder="Search for programs here..." name="searchProgram")
+		button.header-alt__search-button(type='submit')
 			svg.header-alt__search-icon
 				use(xlink:href="/img/sprite.svg#icon-search")
 	input#header-alt__menu.header-alt__checkbox(type="checkbox")

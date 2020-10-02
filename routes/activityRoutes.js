@@ -20,6 +20,8 @@ router
   .get(activityController.getActivity)
   .patch(
     authController.restrictTo('trainer', 'admin'),
+    activityController.uploadActivityImage,
+    activityController.resizeActivityImage,
     activityController.updateActivity
   )
   .delete(

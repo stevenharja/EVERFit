@@ -13,7 +13,10 @@ const multerFilter = (req, file, callback) => {
   if (file.mimetype.startsWith('image')) {
     callback(null, true);
   } else {
-    callback(new AppError('Not an image! Please upload only images.'));
+    callback(
+      new AppError('Not an image! Please upload only images.', 400),
+      false
+    );
   }
 };
 
@@ -25,7 +28,10 @@ const upload = multer({
 exports.uploadProgramImage = upload.single('imageCover');
 
 exports.resizeProgramImage = catchAsync(async (req, res, next) => {
-  if (!req.file) return next();
+  if (!req.file) {
+    //Remove imageCover from body.
+    return next();
+  }
 
   req.body.imageCover = `program-${req.params.id}-${Date.now()}-cover.jpeg`;
   await sharp(req.file.buffer)

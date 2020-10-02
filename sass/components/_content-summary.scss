@@ -1,9 +1,10 @@
-.program-introduction {
+.content-summary {
   display: grid;
   grid-template-columns: 1fr 1fr;
   color: var(--color-grey-light);
   column-gap: 3rem;
   position: relative;
+  padding: 3rem 2rem;
 
   @include respond(phone) {
     grid-template-columns: 1fr;
@@ -42,22 +43,20 @@
     align-content: center;
   }
 
-  &__video-container {
+  &__media-container {
     position: relative;
     padding: 3rem;
   }
 
-  &__video-content {
+  &__media-content {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
     border: var(--border-grey);
   }
 
   &__title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--color-primary-red);
+    color: var(--color-white);
   }
 
   &__description {

@@ -1,8 +1,15 @@
 /* eslint-disable */
 import '@babel/polyfill';
-import { elements, popup, renderLoader, clearLoader } from './views/base.js';
-import { login, logout } from './login';
+import {
+  elements,
+  popup,
+  renderLoader,
+  clearLoader,
+  formElement,
+} from './views/base.js';
+import { login, logout, register } from './login';
 import { changeProfile } from './changeProfile';
+import { editModel } from './editModel';
 
 //////BACK END/////////
 if (elements.loginForm) {
@@ -11,6 +18,18 @@ if (elements.loginForm) {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     login(email, password);
+  });
+}
+
+if (elements.signupForm) {
+  console.log('signup form exists');
+  elements.signupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const passwordConfirm = document.getElementById('passwordConfirm').value;
+    register(name, email, password, passwordConfirm);
   });
 }
 
@@ -44,6 +63,26 @@ if (elements.userPasswordForm) {
     document.getElementById('current-password').value = '';
     document.getElementById('new-password').value = '';
     document.getElementById('confirm-password').value = '';
+  });
+}
+
+if (elements.editModelForm) {
+  console.log('Edit form exists');
+  elements.editModelForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const pathnames = window.location.pathname.split('/');
+    const model = pathnames[2];
+    const id = pathnames[3];
+    const form = new FormData();
+    if (formElement.name) form.append('name', formElement.name.value);
+    if (formElement.summary) form.append('summary', formElement.summary.value);
+    if (formElement.category)
+      form.append('category', formElement.category.value);
+    if (formElement.imageCover)
+      form.append('imageCover', formElement.imageCover.files[0]);
+    if (formElement.description)
+      form.append('description', formElement.description.value);
+    editModel(model, id, form);
   });
 }
 
@@ -130,6 +169,21 @@ if (elements.activityItems.length > 0) {
       elements.popup.style.display = 'block';
       elements.body.classList.toggle('show-popup');
       showContent(index)();
+    });
+  });
+}
+
+if (elements.dropdownBoxes.length > 0) {
+  console.log('There is a dropdown box here.');
+
+  elements.dropdownBoxes.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      console.log('item clicked');
+      // item.lastElementChild.classList.toggle('display-content');
+      // renderLoader(item, 'beforeend');
+      // setTimeout(() => {
+      //   clearLoader(item);
+      // }, 1500);
     });
   });
 }

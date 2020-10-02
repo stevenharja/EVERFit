@@ -19,10 +19,14 @@ exports.updateSection = catchAsync(async (req, res, next) => {
       new AppError('You are not allowed to update this section.', 401)
     );
   }
-  const doc = await Section.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-    runValidators: true,
-  });
+  const doc = await Section.findByIdAndUpdate(
+    req.params.id,
+    { name: req.body.name, $push: { activity: req.body.activity } },
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
 
   res.status(200).json({
     status: 'success',

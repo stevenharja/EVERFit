@@ -11,5 +11,229 @@
     <link rel="stylesheet" href="css/icofont.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <header class="header-alt">
+      <div class="header-alt__logo-box">
+        <img src="img/logo-fit-ever.png" alt="Logo" class="header-alt__logo" />
+      </div>
+      <form class="header-alt__search-box">
+        <input
+          type="text"
+          class="header-alt__search-input"
+          placeholder="Search for programs here..."
+        />
+        <button class="header-alt__search-button">
+          <svg class="header-alt__search-icon">
+            <use xlink:href="img/sprite.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+
+      <input
+        type="checkbox"
+        class="header-alt__checkbox"
+        id="header-alt__menu"
+      />
+      <label for="header-alt__menu" class="header-alt__menu-label">
+        <!-- <span class="header-alt__menu-logo"></span> -->
+        <svg class="header-alt__menu-logo">
+          <use xlink:href="img/sprite.svg#icon-menu"></use>
+        </svg>
+      </label>
+      <nav class="header-alt__nav">
+        <div class="header-alt__nav-item">
+          <a href="select-programs.html" class="header-alt__nav-link">Home</a>
+        </div>
+        <div class="header-alt__nav-item">
+          <a href="select-programs.html" class="header-alt__nav-link"
+            >My Programs</a
+          >
+        </div>
+        <div class="header-alt__nav-item">
+          <a href="account.html" class="header-alt__nav-link">Account</a>
+        </div>
+        <div class="header-alt__nav-item header-alt__nav-item--priority">
+          <figure class="header-alt__nav-user">
+            <img
+              src="img/profile-img.jpg"
+              alt="Profile picture"
+              class="header-alt__nav-user-img"
+            />
+            <svg class="header-alt__nav-user-icon">
+              <use xlink:href="img/sprite.svg#icon-cogs"></use>
+            </svg>
+          </figure>
+        </div>
+      </nav>
+    </header>
+    <main class="content-summary-box">
+      <h2
+        class="heading-secondary heading-secondary--white u-margin-bottom-medium"
+      >
+        Edit/Create Program
+      </h2>
+      <div class="content-summary">
+        <div class="content-summary__text">
+          <form class="form">
+            <div class="form__group">
+              <label for="name" class="form__group-label">${Model} Name</label>
+              <input
+                type="text"
+                class="form__group-input"
+                id="name"
+                name="name"
+                value="Placeholder Text"
+              />
+            </div>
+
+            <div class="form__group">
+              <label for="Summary" class="form__group-label"
+                >${Model} Summary</label
+              >
+              <textarea
+                type="text"
+                class="form__group-input"
+                id="Summary"
+                name="Summary"
+                rows="5"
+              >
+Summary Here</textarea
+              >
+            </div>
+
+            <div class="form__group">
+              <label for="categories" class="form__group-label"
+                >Change Category</label
+              >
+              <select
+                name="categories"
+                id="categories"
+                class="form__group-input"
+              >
+                <option value="workout">Workout</option>
+                <option value="workout" selected>Diet</option>
+                <option value="workout">Gym</option>
+              </select>
+            </div>
+
+            <div class="form__group form__group--side">
+              <input
+                type="file"
+                accept="image/*"
+                class="form__upload"
+                id="imageCover"
+                name="imageCover"
+              />
+              <label for="imageCover">Upload new photo</label>
+            </div>
+
+            <div class="form__group">
+              <label for="description" class="form__group-label"
+                >${Model} Description</label
+              >
+              <textarea
+                type="text"
+                class="form__group-input"
+                id="description"
+                name="description"
+                rows="10"
+              >
+Description here</textarea
+              >
+            </div>
+
+            <div class="content-summary__cta">
+              <button class="content-summary__button" type="submit">
+                Save
+              </button>
+              <button class="content-summary__button" type="button">
+                Add New Section
+              </button>
+            </div>
+          </form>
+          <!-- <div class="content-summary__title">
+            28-Days Full Body Bodyweight Transformation - Quarantine Edition
+          </div>
+          <div class="content-summary__creator">Jason Krae</div>
+          <div class="content-summary__lecture-count">34 total lectures</div>
+          <div class="content-summary__description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati
+            perspiciatis fugiat voluptates voluptatibus excepturi, possimus
+            inventore doloribus quae illo reiciendis iure officiis voluptatum
+            qui hic consectetur adipisci dolores, nesciunt aliquam?
+          </div> -->
+        </div>
+        <div class="content-summary__media-container">
+          <img
+            src="img/fit-2-1.jpg"
+            class="content-summary__media-content"
+            id="img-thumbnail-modify"
+          />
+        </div>
+        <!-- <div class="content-summary__video-container">
+          <video
+            class="content-summary__video-content"
+            controls
+            autoplay
+            muted
+            loop
+          >
+            <source
+              src="video/program-introduction-video-1.mp4"
+              type="video/mp4"
+            />
+            Your browser is not supported.
+          </video> -->
+        <!-- </div> -->
+      </div>
+    </main>
+    <section class="content-child-box">
+      <div class="content-child">
+        <h2
+          class="heading-secondary heading-secondary--gradient u-margin-bottom-medium"
+        >
+          Edit Sections
+        </h2>
+        <div class="dropdown-box" data-id="332323">Section 1</div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer-alt">
+      <!-- Logo -->
+      <div class="footer-alt__logo-box">
+        <img src="img/logo-fit-ever.png" alt="Logo" class="footer-alt__logo" />
+      </div>
+      <!-- Contact Support -->
+      <div class="footer-alt__navigation">
+        <ul class="footer-alt__list">
+          <li class="footer-alt__item">
+            <a href="#" class="footer-alt__link">Contact Us</a>
+          </li>
+          <li class="footer-alt__item">
+            <a href="#" class="footer-alt__link">About Us</a>
+          </li>
+          <li class="footer-alt__item">
+            <a href="#" class="footer-alt__link">Careers</a>
+          </li>
+          <li class="footer-alt__item">
+            <a href="#" class="footer-alt__link">Terms</a>
+          </li>
+          <li class="footer-alt__item">
+            <a href="#" class="footer-alt__link">Privacy Policy</a>
+          </li>
+          <li class="footer-alt__item">
+            <a href="#" class="footer-alt__link">Blog</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Copyright Text -->
+      <p class="footer-alt__copyright">
+        Copyright by Steven Harjapramana &copy; 2020. All images and videos used
+        in this website belongs to their respective owners and I do not take
+        credit of them.
+      </p>
+    </footer>
+
+    <script src="js/bundle.js"></script>
+  </body>
 </html>

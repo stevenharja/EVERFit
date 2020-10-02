@@ -12,6 +12,7 @@
 @import 'pages/programs';
 @import 'pages/login';
 @import 'pages/account';
+@import 'pages/modifyProgram';
 
 @import 'components/bg-video';
 @import 'components/button';
@@ -21,11 +22,12 @@
 @import 'components/testimony';
 @import 'components/program-lite';
 @import 'components/program';
-@import 'components/program-introduction';
-@import 'components/program-part';
+@import 'components/content-summary';
+@import 'components/content-child';
 @import 'components/activity-item';
 @import 'components/form';
 @import 'components/loader';
+@import 'components/dropdown-box';
 
 @import 'layout/header';
 @import 'layout/footer';

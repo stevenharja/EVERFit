@@ -2,6 +2,7 @@ const express = require('express');
 const sectionController = require('../controllers/sectionController');
 const authController = require('../controllers/authController');
 const activityRouter = require('./activityRoutes');
+const handlerFactory = require('../controllers/handlerFactory');
 
 const router = express.Router({ mergeParams: true });
 
@@ -18,6 +19,7 @@ router
   .get(sectionController.getSection)
   .patch(
     authController.restrictTo('trainer', 'admin'),
+    handlerFactory.handleMultipartForm,
     sectionController.updateSection
   )
   .delete(

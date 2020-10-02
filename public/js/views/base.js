@@ -4,10 +4,13 @@ export const elements = {
   popup: document.querySelector('.popup'),
   popupContent: document.querySelector('.popup__content'),
   activityItems: Array.from(document.querySelectorAll('.activity-item')),
-  loginForm: document.querySelector('.login'),
+  loginForm: document.getElementById('login'),
+  signupForm: document.getElementById('signup'),
   logOutBtn: document.getElementById('logout'),
   userDataForm: document.querySelector('.form-user-data'),
   userPasswordForm: document.querySelector('.form-password'),
+  dropdownBoxes: Array.from(document.querySelectorAll('.dropdown-box')),
+  editModelForm: document.getElementById('form-edit'),
 };
 
 export const popup = {
@@ -18,11 +21,19 @@ export const popup = {
   closeButton: document.querySelector('.popup__button--close'),
 };
 
+export const formElement = {
+  name: document.getElementById('name'),
+  summary: document.getElementById('summary'),
+  category: document.getElementById('category'),
+  imageCover: document.getElementById('imageCover'),
+  description: document.getElementById('description'),
+};
+
 export const elementStrings = {
   loader: 'loader',
 };
 
-export const renderLoader = (parent) => {
+export const renderLoader = (parent, beginAt = 'afterbegin') => {
   const loader = `
       <div class="${elementStrings.loader}">
           <svg>
@@ -30,7 +41,7 @@ export const renderLoader = (parent) => {
           </svg>
       </div>
   `;
-  parent.insertAdjacentHTML('afterbegin', loader);
+  parent.insertAdjacentHTML(beginAt, loader);
 };
 
 export const clearLoader = () => {

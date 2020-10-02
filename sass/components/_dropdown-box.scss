@@ -1,0 +1,14 @@
+.dropdown-box {
+  border: var(--border-primary-red);
+  width: 100%;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 0.5rem 1rem rgba($color-black, 0.1);
+  cursor: pointer;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  background-color: $color-white;
+  border-radius: 3px;
+  text-align: center;
+  color: $color-primary-red;
+  font-size: 4rem;
+}

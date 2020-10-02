@@ -1,4 +1,6 @@
 const Program = require('../models/programModel');
+const Section = require('../models/sectionModel');
+const Activity = require('../models/activityModel');
 const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
 
@@ -20,6 +22,12 @@ exports.getOverview = catchAsync(async (req, res, next) => {
 exports.getLoginForm = (req, res, next) => {
   res.status(200).render('login', {
     title: 'Log into your account',
+  });
+};
+
+exports.getSignupForm = (req, res, next) => {
+  res.status(200).render('signup', {
+    title: 'Signup for an account now!',
   });
 };
 
@@ -59,5 +67,41 @@ exports.getCategoryProgram = catchAsync(async (req, res, next) => {
     programs,
     topProgram,
     category: req.params.category,
+  });
+});
+
+exports.getEditContent = catchAsync(async (req, res, next) => {
+  let Model;
+  switch (req.params.model) {
+    case 'programs':
+      Model = Program;
+      break;
+    case 'sections':
+      Model = Section;
+      break;
+    case 'activities':
+      Model = Activity;
+      break;
+    default:
+      return next(new AppError('This page does not exists', 404));
+  }
+
+  const doc = await Model.findById(req.params.id).populate({
+    path: 'sections activity',
+  });
+
+  if (!doc) {
+    return next(
+      new AppError(`No ${req.params.model} was found with that name.`, 404)
+    );
+  }
+
+  console.log(doc.sections);
+  console.log(doc.activity);
+
+  res.status(200).render('editContent', {
+    title: `Edit ${doc.name}`,
+    doc,
+    model: req.params.model,
   });
 });
